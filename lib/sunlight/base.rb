@@ -20,7 +20,6 @@ module Sunlight
         raise "Failed to provide Sunlight API Key"
       else
         "#{API_URL}#{api_method}?#{hash2get(params)}&apikey=#{api_key}"
-        binding.pry
       end
     end
 
@@ -42,14 +41,12 @@ module Sunlight
     # Usage:
     #   Legislator::District.get_json_data("http://someurl.com")    # returns Hash of data or nil
     def self.get_json_data(url)
-
       response = Net::HTTP.get_response(URI.parse(url))
       if response.class == Net::HTTPOK
         result = JSON.parse(response.body)
       else
         nil
       end
-      binding.pry
 
     end # self.get_json_data
 

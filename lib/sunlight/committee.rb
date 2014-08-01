@@ -37,9 +37,9 @@ module Sunlight
     #
     #
 
-    def self.get(id)
+    def self.all_where(params)
 
-      url = construct_url("committees.get", {:id => id})
+      url = construct_url("committees", {:id => id})
       
       if (result = get_json_data(url))
         committee = Committee.new(result["response"]["committee"])
@@ -47,31 +47,6 @@ module Sunlight
         nil # appropriate params not found
       end
 
-    end
-    
-    #
-    # Usage:
-    #   Sunlight::Committee.all_for_chamber("Senate") # or "House" or "Joint"
-    #
-    # Returns:
-    #
-    # An array of Committees in that chamber of Congress
-    #
-    def self.all_for_chamber(chamber)
-      
-      url = construct_url("committees.getList", {:chamber=> chamber})
-      
-      if (result = get_json_data(url))
-        committees = []
-        result["response"]["committees"].each do |committee|
-          committees << Committee.new(committee["committee"])
-        end
-      else
-        nil # appropriate params not found
-      end
-      
-      committees
-      
     end
 
   end # class Committee
