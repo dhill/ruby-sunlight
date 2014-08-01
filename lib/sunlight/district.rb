@@ -43,7 +43,7 @@ module Sunlight
     #
     def self.get_from_lat_long(latitude, longitude)
 
-      url = construct_url("districts", {:latitude => latitude, :longitude => longitude})
+      url = construct_url("districts/locate", {:latitude => latitude, :longitude => longitude})
 
       districts = districts_from_url(url)
 
@@ -57,7 +57,7 @@ module Sunlight
     #
     def self.all_from_zipcode(zipcode)
 
-      url = construct_url("districts", {:zip => zipcode})
+      url = construct_url("districts/locate", {:zip => zipcode})
 
       districts_from_url(url)
     end
