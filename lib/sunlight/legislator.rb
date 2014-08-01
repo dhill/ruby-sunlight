@@ -7,7 +7,7 @@ module Sunlight
                   :party, :state, :district, :in_office, :gender, :phone, :fax, :website, :webform,
                   :email, :congress_office, :bioguide_id, :votesmart_id, :fec_id,
                   :govtrack_id, :crp_id, :congresspedia_url, :twitter_id, :youtube_url, :facebook_id,
-                  :senate_class, :birthdate, :fuzzy_score
+                  :senate_class, :birthdate, :term_start, :term_end, :terms, :fuzzy_score
 
     # Takes in a hash where the keys are strings (the format passed in by the JSON parser)
     #
