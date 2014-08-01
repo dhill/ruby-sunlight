@@ -3,8 +3,7 @@ module Sunlight
   # Houses general methods to work with the Sunlight and Google Maps APIs
   class Base
 
-    API_URL = "http://services.sunlightlabs.com/api/"
-    API_FORMAT = "json"
+    API_URL = "https://congress.api.sunlightfoundation.com/"
     @@api_key = ''
     
     def self.api_key
@@ -20,7 +19,8 @@ module Sunlight
       if api_key == nil or api_key == ''
         raise "Failed to provide Sunlight API Key"
       else
-        "#{API_URL}#{api_method}.#{API_FORMAT}?apikey=#{api_key}#{hash2get(params)}"
+        "#{API_URL}#{api_method}?#{hash2get(params)}&apikey=#{api_key}"
+        binding.pry
       end
     end
 
