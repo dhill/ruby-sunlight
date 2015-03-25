@@ -67,8 +67,8 @@ module Sunlight
       if (result = get_json_data(url))
 
         districts = []
-        result["response"]["districts"].each do |district|
-          districts << District.new(district["district"]["state"], district["district"]["number"])
+        result["results"].each do |district|
+          districts << District.new(district["state"], district["district"])
         end
 
         districts

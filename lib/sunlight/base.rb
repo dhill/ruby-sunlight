@@ -3,7 +3,7 @@ module Sunlight
   # Houses general methods to work with the Sunlight and Google Maps APIs
   class Base
 
-    API_URL = "https://congress.api.sunlightfoundation.com/"
+    API_URL = "http://congress.api.sunlightfoundation.com/"
     @@api_key = ''
     
     def self.api_key
